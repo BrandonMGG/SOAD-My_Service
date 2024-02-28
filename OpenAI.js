@@ -1,25 +1,19 @@
 import OpenAI from "openai";
 
+// Definicion de apiKey 
+const openai = new OpenAI({ apiKey: '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' });
 
-//openai.api_key = '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';
-const openai = new OpenAI('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');
+// funcion para realizar peticiones 
+export async function main(prompt) {
+  //hacer la peticion al API de openai
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "system", content: prompt }],
+    model: "gpt-3.5-turbo",
+  });
 
-// Crea una instancia de OpenAI con tu clave de API
-//const api_key = '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';
-
-// Función para enviar una solicitud a OpenAI y obtener la respuesta
-async function sendMessageToGPT() {
-  try {
-    const response = await openai.ChatCompletion.create({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "Say this is a test" }],
-        stream: true,
-    });
-    return response.data.choices[0].text.trim(); // Obtiene el texto de la respuesta
-  } catch (error) {
-    console.error('Error al comunicarse con OpenAI:', error);
-    return 'Lo siento, ha ocurrido un error.';
-  }
+  // iumprimir el mensaje de openai en la consola
+  console.log(completion.choices[0].message.content);
 }
 
-sendMessageToGPT();
+// llamada a la funcion para hacer la peticion
+// main("hola, com estas?");
