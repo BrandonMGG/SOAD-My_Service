@@ -2,9 +2,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import nodemon from 'nodemon';
+import fs from 'fs'
 // Loading environment variables from .env file
 dotenv.config();
-
+//acceso a la base de datos
+const database=JSON.parse(fs.readFileSync('./database.json'))    
+console.log("base de  datos de prueba",database)
 // Creating an Express application
 const app = express();
 
