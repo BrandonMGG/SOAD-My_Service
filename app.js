@@ -28,3 +28,10 @@ app.listen(PORT, () => {
     console.log(`The application is listening on port ${PORT}`);
     
 });
+
+// Ejemplo de cómo utilizar la función sendMessageToGPT
+(async () => {
+    const userInput = 'Hola, ¿cómo estás?';
+    const gptResponse = await sendMessageToGPT(userInput);
+    console.log('Respuesta de GPT:', gptResponse);
+  })();
