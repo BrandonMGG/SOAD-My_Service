@@ -1,3 +1,17 @@
-{    "comida":"pescado",
-     "recomendacion":7
+{
+    "postres": [
+      { "id": 1, "name": "Tiramisu" },
+      { "id": 2, "name": "Cheesecake" },
+      { "id" : 3, "name": "Chocolate Cake" }
+    ],
+    "platoPrincipal": [
+      { "id": 1, "name": "Grilled Salmon" },
+      { "id": 2, "name": "Chicken Alfredo" },
+      { "id": 3, "name": "Beef Stir Fry" }
+    ],
+    "bebidas": [
+      { "id": 1, "name": "Red Wine" },
+      { "id": 2, "name": "Mojito" },
+      { "id": 3, "name": "Lemonade" }
+    ]
 }
