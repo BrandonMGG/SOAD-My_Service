@@ -2,12 +2,18 @@ import axios from 'axios';
 import express from 'express';
 import fs from 'fs';
 import morgan from 'morgan';
+import swaggerSpec from './swagger.js';
+import swaggerUI  from 'swagger-ui-express'
+
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 app.use(morgan('dev'));
+
+//swagger documentation 
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerSpec))
 
 const database = JSON.parse(fs.readFileSync("./database.json"));
 
