@@ -17,21 +17,42 @@ _Express.js:_ Es un framework web minimalista y flexible para Node.js que simpli
 _npm (Node Package Manager)_: Es el administrador de paquetes para Node.js. Se utiliza para instalar, compartir y administrar dependencias de proyectos Node.js. Este fue determinante en la integración de bibliotecas como la de openai para poder implementar el endpoint de recomendaciones con inteligencia artificial.
 
 ## 4. Estándares de porgramación.
+Los estándares de programación para el desarrollo del servicio web se definen como sigue:
 
+_Estructura del código:_
+
+Siempre se utilizará una estructura de proyecto que incluya carpetas separadas para diferentes componentes.
+Dividir el código en archivos pequeños para facilitar la comprensión y el mantenimiento de la aplicación.
+
+_Nomenclatura de variables y funciones:_
+
+Siempre utilizar nombres descriptivos y significativos para las variables y funciones de manera consistente para que se comprenda su propósito y función en el código (por ejemplo, Nombre_de_funcion) para garantizar la legibilidad y coherencia en todo el código.
+
+_Mantenibilidad del código:_
+
+Documentar el código utilizando comentarios claros y de tamaño reducido para explicar el propósito y el funcionamiento de las funciones y bloques complejos del código.
+Procurar la reutilización de código para mejorar la mantenibilidad y la facilidad de actualización del código.
+Mantener una arquitectura simple y fácil de entender que permita realizar cambios y mejoras de manera eficiente.
+
+_Organización del código en diferentes branches de Git:_
+
+Utilizar Git para gestionar el control de versiones del código y mantener diferentes ramas (branches) para separar el desarrollo de las diferentes características, componentes, microservicios utilizados y corrección de errores.
+Seguir un flujo de trabajo simple, como Git Flow, que incluya ramas principales como master para versiones estables y develop para el desarrollo en curso.
+Hacer un uso adecuado de las ramas para trabajar en nuevas funcionalidades de manera aislada antes de fusionarlas con la rama principal.
 
 ## 5. Organización/layout de los proyectos de código
 Para organización del proyecto se realizaron diagramas utilizando el modelo C4 (Contexto, Contenedores, Componentes y Código) para arquitectura de software, el cual proporciona una forma escalable y jerárquica de representar la arquitectura de un sistema, desde una vista panorámica hasta los detalles de implementación a nivel de código, facilitando la comunicación y comprensión de la arquitectura del sistema entre los miembros del equipo y las partes interesadas.
 
 Los diagramas realizados para esta implementación fueron los de contexto, contenedores y componentes; estos se muestran a continuación:
 
-### **Diagrama de contexto**
+### **Diagrama de contexto:**
 
 ![diagC4Context](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Context%20Diagram.jpg?raw=true)
 
-### **Diagrama de contenedores**
+### **Diagrama de contenedores:**
 ![diagC4Containers](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Container%20Diagram.jpg?raw=true)
 
-### **Diagrama de componentes**
+### **Diagrama de componentes:**
 ![diagC4Components](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Component%20Diagram.jpg?raw=true)
 
 ## 6. Los argumentos que recibe y responde el API
