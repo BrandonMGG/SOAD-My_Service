@@ -10,7 +10,7 @@ En cuanto al lenguaje de programción utilizado para el desarrollo del servicio 
 
 ## 2. Framework utilizado.
 
-_Express.js:_ Es un framework web minimalista y flexible para Node.js que simplifica el desarrollo de aplicaciones web y API. Es uno de los frameworks más populares y ampliamente utilizados en el ecosistema de Node.js. Proporciona una capa de abstracción que facilita la creación de rutas, manejo de solicitudes y respuestas y otras tareas comunes en el desarrollo web.
+Se utiliza _Express.js_, el cual es un framework web minimalista y flexible para Node.js que simplifica el desarrollo de aplicaciones web y API. Es uno de los frameworks más populares y ampliamente utilizados en el ecosistema de Node.js. Proporciona una capa de abstracción que facilita la creación de rutas, manejo de solicitudes y respuestas y otras tareas comunes en el desarrollo web.
 
 ## 3. Tecnología.
 
@@ -57,7 +57,7 @@ Los diagramas realizados para esta implementación fueron los de contexto, conte
 
 ## 6. Los argumentos que recibe y responde el API
 ### ¿Cómo usar el API?
-Se debe hacer un HTTP request por medio del método POST a la siguiente url: www.google.com
+Se debe hacer un HTTP request por medio del método POST a la siguiente url: https://soadproject1.web.app/recommendation
 
 
 ### _Argumentos que recibe:_ 
