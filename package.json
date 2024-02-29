@@ -5,18 +5,20 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon app.js ",
+    "start": "nodemon appPrueba.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.7",
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "openai": "^4.28.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.0.3"
   }
 }

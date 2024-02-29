@@ -14,6 +14,9 @@ console.log("base de  datos de prueba",database)
 const app = express();
 
 // Define a route
+
+
+
 app.get('/recomendar-por-plato/:plato', (req, res) => {
     const plato = req.params.plato;
     const data = JSON.parse(fs.readFileSync('./database.json'))  
