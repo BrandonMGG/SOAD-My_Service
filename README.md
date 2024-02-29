@@ -56,3 +56,37 @@ Los diagramas realizados para esta implementación fueron los de contexto, conte
 ![diagC4Components](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Component%20Diagram.jpg?raw=true)
 
 ## 6. Los argumentos que recibe y responde el API
+### ¿Cómo usar el API?
+Se debe hacer un HTTP request por medio del método POST a la siguiente url: www.google.com
+
+
+### _Argumentos que recibe:_ 
+Mediante un post se debe especificar el tipo (corresponde a una de estas opciones: plato principal, postre, bebida), input (corresponde al nombre de: elplato, el postre, la bebida), endpoint(corresponde a una de estas opciones: estatico, dinamico, IA).
+Es posible poder hacer el request de 1 o 2 recomendaciones en el body.
+
+Ejemplo del request que recibe para dos recomendaciones:
+
+`[{
+    "tipo": "platoPrincipal",
+    "input": "Pollo al curry",
+     "endpoint": "estatico"
+  },
+  {
+    "tipo": "postre",
+    "input": "Tiramisú",
+     "endpoint": "estatico"
+  }
+ ]`
+
+
+### _Argumentos que responde:_ 
+La respuesta es una sola cadena de texto procesado con las recomendaciones, lo cual dependerá de si es 1 o 2 recomendaciones
+
+Ejemplo de la respuesta para un input con 2 recomendaciones:
+
+`{
+    "recomendaciones": [
+        "Para el plato principal \"Pollo al curry\", te recomiendo el postre \"Pastel de chocolate\" y la bebida \"Lassi de mango\".",
+        "Para el postre \"Tiramisú\", te recomiendo el plato principal \"Lasaña\" y la bebida \"Vino tinto\"."
+    ]
+  }`
