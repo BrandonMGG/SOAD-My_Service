@@ -23,11 +23,15 @@ _npm (Node Package Manager)_: Es el administrador de paquetes para Node.js. Se u
 Para organización del proyecto se realizaron diagramas utilizando el modelo C4 (Contexto, Contenedores, Componentes y Código) para arquitectura de software, el cual proporciona una forma escalable y jerárquica de representar la arquitectura de un sistema, desde una vista panorámica hasta los detalles de implementación a nivel de código, facilitando la comunicación y comprensión de la arquitectura del sistema entre los miembros del equipo y las partes interesadas.
 
 Los diagramas realizados para esta implementación fueron los de contexto, contenedores y componentes; estos se muestran a continuación:
-**Diagrama de contexto**
-![diagC4Context](https://drive.google.com/file/d/1DyiEQAa-mh-GbC5jeTcWOi0LCOwpyvT-/view?usp=sharing)
-**Diagrama de contenedores**
-![diagC4Containers](https://drive.google.com/file/d/1DyiEQAa-mh-GbC5jeTcWOi0LCOwpyvT-/view?usp=sharing)
-**Diagrama de componentes**
-![diagC4Components](https://drive.google.com/file/d/1DyiEQAa-mh-GbC5jeTcWOi0LCOwpyvT-/view?usp=sharing)
+
+### **Diagrama de contexto**
+
+![diagC4Context](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Context%20Diagram.jpg?raw=true)
+
+### **Diagrama de contenedores**
+![diagC4Containers](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Container%20Diagram.jpg?raw=true)
+
+### **Diagrama de componentes**
+![diagC4Components](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Component%20Diagram.jpg?raw=true)
 
 ## 6. Los argumentos que recibe y responde el API
