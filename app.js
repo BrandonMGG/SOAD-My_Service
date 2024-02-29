@@ -1,100 +1,100 @@
-// Importing required modules
+import axios from 'axios';
 import express from 'express';
-import dotenv from 'dotenv';
-import nodemon from 'nodemon';
-import fs from 'fs'
-import { createRequire } from 'module';
+import fs from 'fs';
+import morgan from 'morgan';
 
-// Loading environment variables from .env file
-dotenv.config();
-//acceso a la base de datos
-const database=JSON.parse(fs.readFileSync('./database.json'))    
-console.log("base de  datos de prueba",database)
-// Creating an Express application
 const app = express();
+const PORT = 3000;
 
-// Define a route
+app.use(express.json());
+app.use(morgan('dev'));
+
+const database = JSON.parse(fs.readFileSync("./database.json"));
+
+function obtenerPlatoPrincipal(nombre) {
+    return database.platosPrincipales.find(plato => plato.nombre.toLowerCase() === nombre.toLowerCase());
+}
+
+function obtenerPostre(nombre) {
+    return database.postres.find(postre => postre.nombre.toLowerCase() === nombre.toLowerCase());
+}
+
+function obtenerBebida(nombre) {
+    return database.bebidas.find(bebida => bebida.nombre.toLowerCase() === nombre.toLowerCase());
+}
 
 
-
-app.get('/recomendar-por-plato/:plato', (req, res) => {
-    const plato = req.params.plato;
-    const data = JSON.parse(fs.readFileSync('./database.json'))  
-  
-    if (!data[plato]) {
-      res.status(404).send('Plato no encontrado');
-      return;
-    }
-  
-    const postre = data[plato].postre;
-    const bebida = data[plato].bebida;
-  
-    res.json({
-      postre,
-      bebida
-    });
-  });
-  
-  // Ruta para obtener recomendaciones por bebida
-  app.get('/recomendar-por-bebida/:bebida', (req, res) => {
-    const bebida = req.params.bebida;
-    const data = JSON.parse(fs.readFileSync('./database.json'))  
-  
-    let plato;
-    let postre;
-  
-    for (const platoKey in data) {
-      if (data[platoKey].bebida === bebida) {
-        plato = data[platoKey].plato;
-        postre = data[platoKey].postre;
-        break;
-      }
-    }
-  
+function obtenerRecomendacionPorPlatoPrincipal(platoPrincipal) {
+    const plato = obtenerPlatoPrincipal(platoPrincipal);
     if (!plato) {
-      res.status(404).send('Bebida no encontrada');
-      return;
+        return 'Lo siento, no se encontró el plato principal especificado.';
     }
-  
-    res.json({
-      plato,
-      postre
-    });
-  });
+    return `Para el plato principal "${plato.nombre}", te recomiendo el postre "${plato.postreRecomendado}" y la bebida "${plato.bebidaRecomendada}".`;
+}
 
-  app.get('/recomendar-por-postre/:postre', (req, res) => {
-    const postre = req.params.postre;
-    const data = JSON.parse(fs.readFileSync('./database.json'))  
-  
-    let plato;
-    let bebida;
-  
-    for (const platoKey in data) {
-      if (data[platoKey].postre === postre) {
-        plato = data[platoKey].plato;
-        bebida = data[platoKey].bebida;
-        break;
-      }
+function obtenerRecomendacionPorPostre(postre) {
+    const postreEncontrado = obtenerPostre(postre);
+    if (!postreEncontrado) {
+        return 'Lo siento, no se encontró el postre especificado.';
     }
-  
-    if (!plato) {
-      res.status(404).send('Postre no encontrado');
-      return;
+
+    const platoPrincipal = database.platosPrincipales.find(plato => plato.postreRecomendado.toLowerCase() === postreEncontrado.nombre.toLowerCase());
+    const bebida = database.bebidas.find(bebida => bebida.nombre.toLowerCase() === platoPrincipal.bebidaRecomendada.toLowerCase());
+
+    return `Para el postre "${postreEncontrado.nombre}", te recomiendo el plato principal "${platoPrincipal.nombre}" y la bebida "${bebida.nombre}".`;
+}
+
+function obtenerRecomendacionPorBebida(bebida) {
+    const bebidaEncontrada = obtenerBebida(bebida);
+    if (!bebidaEncontrada) {
+        return 'Lo siento, no se encontró la bebida especificada.';
     }
-  
-    res.json({
-      plato,
-      bebida
-    });
-  });
 
-app.post("/",()=>{})
-// Define the port
-const PORT = process.env.PORT || 8888 ; // Use port from environment variable or default to 3000
+    const platoPrincipal = database.platosPrincipales.find(plato => plato.bebidaRecomendada.toLowerCase() === bebidaEncontrada.nombre.toLowerCase());
+    const postre = database.postres.find(postre => postre.nombre.toLowerCase() === platoPrincipal.postreRecomendado.toLowerCase());
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`The application is listening on port ${PORT}`);
-    
+    return `Para la bebida "${bebidaEncontrada.nombre}", te recomiendo el plato principal "${platoPrincipal.nombre}" y el postre "${postre.nombre}".`;
+}
+
+app.post('/recommendation', async (req, res) => {
+    const recomendaciones = [];
+    const requests = req.body;
+
+    for (const request of requests) {
+        const { tipo, input,endpoint } = request;
+        let recomendacion;
+        if (endpoint==='estatico'){
+
+        if (tipo === 'platoPrincipal') {
+            recomendacion = obtenerRecomendacionPorPlatoPrincipal(input);
+        } else if (tipo === 'postre') {
+            recomendacion = obtenerRecomendacionPorPostre(input);
+        } else if (tipo === 'bebida') {
+            recomendacion = obtenerRecomendacionPorBebida(input);
+        } else {
+            recomendacion = `Tipo de recomendación "${tipo}" no válido.`;
+        }
+        }
+
+        recomendaciones.push(recomendacion);
+    }
+   /* elif(endpoint==="dinamico"){
+        
+        async const dataDinamic=()=> {
+            try {
+              const response = await axios.post('/user?ID=12345',{
+            
+              });
+              console.log(response);
+            } catch (error) {
+              console.error(error);
+            }
+          }
+    }*/
+
+    res.json({ recomendaciones });
 });
 
+app.listen(PORT, () => {
+    console.log(`Servidor en ejecución en http://localhost:${PORT}`);
+});

@@ -1,252 +1,42 @@
 {
-    "plato1": {
-        "plato": "lomo saltado",
-        "postre": "Suspiro Limeño",
-        "bebida": "Inca Kola"
-    },
-    "plato2": {
-        "plato": "pollo a la brasa",
-        "postre": "Mazamorra Morada",
-        "bebida": "Chicha Morada"
-    },
-    "plato3": {
-        "plato": "ceviche",
-        "postre": "Arroz con Leche",
-        "bebida": "Chicha de Jora"
-    },
-    "plato4": {
-        "plato": "hamburguesa",
-        "postre": "Sundae de Vainilla",
-        "bebida": "Refresco"
-    },
-    "plato5": {
-        "plato": "pizza",
-        "postre": "Tiramisú",
-        "bebida": "Vino Tinto"
-    },
-    "plato6": {
-        "plato": "tacos al pastor",
-        "postre": "Flan Napolitano",
-        "bebida": "Horchata"
-    },
-    "plato7": {
-        "plato": "sushi",
-        "postre": "Mochi de Matcha",
-        "bebida": "Sake"
-    },
-    "plato8": {
-        "plato": "risotto",
-        "postre": "Panna Cotta",
-        "bebida": "Vino Blanco"
-    },
-    "plato9": {
-        "plato": "tikka masala",
-        "postre": "Gulab Jamun",
-        "bebida": "Lassi de Mango"
-    },
-    "plato10": {
-        "plato": "chiles en nogada",
-        "postre": "Helado de Nuez",
-        "bebida": "Agua de Jamaica"
-    },
-    "plato11": {
-        "plato": "paella",
-        "postre": "Crema Catalana",
-        "bebida": "Sangría"
-    },
-    "plato12": {
-        "plato": "tortilla española",
-        "postre": "Churros",
-        "bebida": "Sidra"
-    },
-    "plato13": {
-        "plato": "pasta al pesto",
-        "postre": "Affogato",
-        "bebida": "Vino Chianti"
-    },
-    "plato14": {
-        "plato": "curry de pollo",
-        "postre": "Kulfi",
-        "bebida": "Lassi de Rosa"
-    },
-    "plato15": {
-        "plato": "lasaña",
-        "postre": "Cannoli",
-        "bebida": "Limoncello"
-    },
-    "plato16": {
-        "plato": "sopa de pollo",
-        "postre": "Tarta de Manzana",
-        "bebida": "Jugo de Manzana"
-    },
-    "plato17": {
-        "plato": "pastel de carne",
-        "postre": "Cheesecake de Fresa",
-        "bebida": "Cerveza"
-    },
-    "plato18": {
-        "plato": "pollo frito",
-        "postre": "Pie de Limón",
-        "bebida": "Refresco"
-    },
-    "plato19": {
-        "plato": "ensalada César",
-        "postre": "Gelatina de Limón",
-        "bebida": "Agua Mineral"
-    },
-    "plato20": {
-        "plato": "arroz con pollo",
-        "postre": "Mazamorra Morada",
-        "bebida": "Inca Kola"
-    },
-    "plato21": {
-        "plato": "sándwich de pollo",
-        "postre": "Tarta de Queso",
-        "bebida": "Té Helado"
-    },
-    "plato22": {
-        "plato": "tacos de carne asada",
-        "postre": "Tres Leches",
-        "bebida": "Cerveza Mexicana"
-    },
-    "plato23": {
-        "plato": "macarrones con queso",
-        "postre": "Pastel de Chocolate",
-        "bebida": "Refresco"
-    },
-    "plato24": {
-        "plato": "filete de pescado",
-        "postre": "Pudín de Pan",
-        "bebida": "Vino Rosado"
-    },
-    "plato25": {
-        "plato": "hot dog",
-        "postre": "Malteada de Chocolate",
-        "bebida": "Refresco"
-    },
-    "plato26": {
-        "plato": "sopa de tomate",
-        "postre": "Tarta de Cereza",
-        "bebida": "Té Helado"
-    },
-    "plato27": {
-        "plato": "pescado empanizado",
-        "postre": "Helado de Vainilla",
-        "bebida": "Limonada"
-    },
-    "plato28": {
-        "plato": "papas fritas",
-        "postre": "Galletas Caseras",
-        "bebida": "Refresco"
-    },
-    "plato29": {
-        "plato": "huevo revuelto",
-        "postre": "Tarta de Manzana",
-        "bebida": "Jugo de Naranja"
-    },
-    "plato30": {
-        "plato": "salchicha asada",
-        "postre": "Natillas",
-        "bebida": "Cerveza"
-    },
-    "plato31": {
-        "plato": "ensalada de atún",
-        "postre": "Crepas con Nutella",
-        "bebida": "Agua Mineral"
-    },
-    "plato32": {
-        "plato": "albóndigas en salsa de tomate",
-        "postre": "Arroz con Leche",
-        "bebida": "Refresco"
-    },
-    "plato33": {
-        "plato": "pollo al horno",
-        "postre": "Tarta de Manzana",
-        "bebida": "Sidra"
-    },
-    "plato34": {
-        "plato": "tarta de queso",
-        "postre": "Gelatina de Fresa",
-        "bebida": "Refresco"
-    },
-    "plato35": {
-        "plato": "paella",
-        "postre": "Crema Catalana",
-        "bebida": "Sangría"
-    },
-    "plato36": {
-        "plato": "lasagna",
-        "postre": "Tiramisú",
-        "bebida": "Vino Tinto"
-    },
-    "plato37": {
-        "plato": "sopa de verduras",
-        "postre": "Galletas de Avena",
-        "bebida": "Agua"
-    },
-    "plato38": {
-        "plato": "carne asada",
-        "postre": "Pastel de Chocolate",
-        "bebida": "Cerveza"
-    },
-    "plato39": {
-        "plato": "spaghetti bolognese",
-        "postre": "Tiramisú",
-        "bebida": "Vino Tinto"
-    },
-    "plato40": {
-        "plato": "sushi",
-        "postre": "Mochi de Matcha",
-        "bebida": "Sake"
-    },
-    "plato41": {
-        "plato": "arroz frito",
-        "postre": "Helado de Vainilla",
-        "bebida": "Limonada"
-    },
-    "plato42": {
-        "plato": "pollo al curry",
-        "postre": "Gulab Jamun",
-        "bebida": "Lassi de Mango"
-    },
-    "plato43": {
-        "plato": "hamburguesa con queso",
-        "postre": "Sundae de Vainilla",
-        "bebida": "Refresco"
-    },
-    "plato44": {
-        "plato": "pollo frito",
-        "postre": "Pie de Limón",
-        "bebida": "Refresco"
-    },
-    "plato45": {
-        "plato": "ensalada césar",
-        "postre": "Gelatina de Limón",
-        "bebida": "Agua Mineral"
-    },
-    "plato46": {
-        "plato": "quesadillas",
-        "postre": "Pastel de Tres Leches",
-        "bebida": "Agua de Horchata"
-    },
-    "plato47": {
-        "plato": "tacos de pescado",
-        "postre": "Flan Napolitano",
-        "bebida": "Agua de Horchata"
-    },
-    "plato48": {
-        "plato": "pollo a la parrilla",
-        "postre": "Pie de Limón",
-        "bebida": "Té Helado"
-    },
-    "plato49": {
-        "plato": "carnitas",
-        "postre": "Churros",
-        "bebida": "Cerveza"
-    },
-    "plato50": {
-        "plato": "chuletas de cerdo",
-        "postre": "Natillas",
-        "bebida": "Vino Tinto"
-    }
-}
+    "platosPrincipales": [
+      {
+        "nombre": "Lasaña",
+        "postreRecomendado": "Tiramisú",
+        "bebidaRecomendada": "Vino tinto"
+      },
+      {
+        "nombre": "Pollo al curry",
+        "postreRecomendado": "Pastel de chocolate",
+        "bebidaRecomendada": "Lassi de mango"
+      },
+      {
+        "nombre": "Sushi",
+        "postreRecomendado": "Mochi",
+        "bebidaRecomendada": "Sake"
+      }
+    ],
+    "postres": [
+      {
+        "nombre": "Tiramisú"
+      },
+      {
+        "nombre": "Pastel de chocolate"
+      },
+      {
+        "nombre": "Mochi"
+      }
+    ],
+    "bebidas": [
+      {
+        "nombre": "Vino tinto"
+      },
+      {
+        "nombre": "Lassi de mango"
+      },
+      {
+        "nombre": "Sake"
+      }
+    ]
+  }
+  
