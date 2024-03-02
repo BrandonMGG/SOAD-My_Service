@@ -79,6 +79,7 @@ Ejemplo del request que recibe para dos recomendaciones:
  ]`
 
 
+
 ### _Argumentos que responde:_ 
 La respuesta es una sola cadena de texto procesado con las recomendaciones, lo cual dependerá de si es 1 o 2 recomendaciones
 
