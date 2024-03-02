@@ -14,7 +14,7 @@ const swaggerOptions = {
 			}
 		]
 	},
-	apis: ['./src/routes/health-check.js'] // Path to the API Routes
+	apis: ['./src/routes/*.js'] // Path to the API Routes
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
