@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import swaggerSpec from './swagger.js';
 import swaggerUI  from 'swagger-ui-express'
 
-
+import { obtenerData,obtenerRecomendacionPorBebida,obtenerRecomendacionPorPostre,obtenerRecomendacionPorPlatoPrincipal } from './obtenerDATA.js';
 const app = express();
 const PORT = 3000;
 
@@ -15,80 +15,40 @@ app.use(morgan('dev'));
 //swagger documentation 
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerSpec))
 
-const database = JSON.parse(fs.readFileSync("./database.json"));
 
-function obtenerPlatoPrincipal(nombre) {
-    return database.platosPrincipales.find(plato => plato.nombre.toLowerCase() === nombre.toLowerCase());
-}
-
-function obtenerPostre(nombre) {
-    return database.postres.find(postre => postre.nombre.toLowerCase() === nombre.toLowerCase());
-}
-
-function obtenerBebida(nombre) {
-    return database.bebidas.find(bebida => bebida.nombre.toLowerCase() === nombre.toLowerCase());
-}
-
-
-function obtenerRecomendacionPorPlatoPrincipal(platoPrincipal) {
-    const plato = obtenerPlatoPrincipal(platoPrincipal);
-    if (!plato) {
-        return 'Lo siento, no se encontró el plato principal especificado.';
-    }
-    return `Para el plato principal "${plato.nombre}", te recomiendo el postre "${plato.postreRecomendado}" y la bebida "${plato.bebidaRecomendada}".`;
-}
-
-function obtenerRecomendacionPorPostre(postre) {
-    const postreEncontrado = obtenerPostre(postre);
-    if (!postreEncontrado) {
-        return 'Lo siento, no se encontró el postre especificado.';
-    }
-
-    const platoPrincipal = database.platosPrincipales.find(plato => plato.postreRecomendado.toLowerCase() === postreEncontrado.nombre.toLowerCase());
-    const bebida = database.bebidas.find(bebida => bebida.nombre.toLowerCase() === platoPrincipal.bebidaRecomendada.toLowerCase());
-
-    return `Para el postre "${postreEncontrado.nombre}", te recomiendo el plato principal "${platoPrincipal.nombre}" y la bebida "${bebida.nombre}".`;
-}
-
-function obtenerRecomendacionPorBebida(bebida) {
-    const bebidaEncontrada = obtenerBebida(bebida);
-    if (!bebidaEncontrada) {
-        return 'Lo siento, no se encontró la bebida especificada.';
-    }
-
-    const platoPrincipal = database.platosPrincipales.find(plato => plato.bebidaRecomendada.toLowerCase() === bebidaEncontrada.nombre.toLowerCase());
-    const postre = database.postres.find(postre => postre.nombre.toLowerCase() === platoPrincipal.postreRecomendado.toLowerCase());
-
-    return `Para la bebida "${bebidaEncontrada.nombre}", te recomiendo el plato principal "${platoPrincipal.nombre}" y el postre "${postre.nombre}".`;
-}
 
 app.post('/recommendation', async (req, res) => {
     const recomendaciones = [];
-    const requests = req.body;
-
-    for (const request of requests) {
-        const { tipo, input,endpoint } = request;
+        const { tipo1, data1, endpoint,tipo2,data2} = req.body;
         let recomendacion;
+       
+        if(tipo2 && data2){
+            recomendacion=obtenerData(tipo1,data1,tipo2,data2)
+            console.log(recomendacion)
+        }
+        else{
         if (endpoint==='estatico'){
 
-        if (tipo === 'platoPrincipal') {
-            recomendacion = obtenerRecomendacionPorPlatoPrincipal(input);
-        } else if (tipo === 'postre') {
-            recomendacion = obtenerRecomendacionPorPostre(input);
-        } else if (tipo === 'bebida') {
-            recomendacion = obtenerRecomendacionPorBebida(input);
+        if (tipo1 === 'platoPrincipal') {
+            recomendacion = obtenerRecomendacionPorPlatoPrincipal(data1);
+        } else if (tipo1 === 'postre') {
+            recomendacion = obtenerRecomendacionPorPostre(data1);
+        } else if (tipo1 === 'bebida') {
+            recomendacion = obtenerRecomendacionPorBebida(data1);
         } else {
-            recomendacion = `Tipo de recomendación "${tipo}" no válido.`;
+            recomendacion = `Tipo de recomendación "${tipo1}" no válido.`;
         }
-        }
-
-        recomendaciones.push(recomendacion);
     }
-   /* elif(endpoint==="dinamico"){
-        
+
+       
+    }
+
+    recomendaciones.push(recomendacion);
+  /* if(endpoint==="dinamico"){
+            
         async const dataDinamic=()=> {
             try {
-              const response = await axios.post('/user?ID=12345',{
+              const response = await axios.get('/user?ID=12345',{
             
               });
               console.log(response);
