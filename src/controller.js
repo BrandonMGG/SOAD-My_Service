@@ -6,8 +6,26 @@ import {
 } from "./model.js";
 import dataIA from "../OpenAI.js";
 import { response } from "express";
+async function getIA(data1) {
+  try {
+      const recomendacion = await dataIA(`dame una recomendacion de bebida y de postre si mi plato principal es ${data1} devuelveme la informacion en un json`);
+      return JSON.parse(recomendacion);
+  } catch (error) {
+      console.error("Error en la solicitud a la IA:", error);
+      return { error: "Error en la solicitud a la IA", status: 500 };
+  }
+}
+/*async function handlerIA(data1){ 
+  try{
+    
+ const recomendacion=await getIA(data1)
+  return recomendacion
 
-function getRecommendation(tipo1, data1, endpoint,tipo2,data2,res) {
+  }catch(error){
+    console.log(error)
+  }
+}*/
+async function getRecommendation(tipo1, data1, endpoint,tipo2,data2,res) {
         
         let recomendacion;
         if(endpoint==="estatico"){
@@ -56,17 +74,14 @@ function getRecommendation(tipo1, data1, endpoint,tipo2,data2,res) {
            }
          }
    }
-   if(endpoint==="IA"){
-    if(tipo1==="platoPrincipal")
-
-    dataIA(`dame una recomendacion de bebida y de postre si mi plato principal es  ${tipo1} devuelveme la informacion en un json`).then(
-      (recomendacion=>{ 
-        recomendacion=JSON.parse(recomendacion)
-      }
-        )
-               ).catch(error=> error)
-   }
-  console.log(recomendacion)
+   if (endpoint === "IA") {
+    if (tipo1 === "platoPrincipal") {
+      recomendacion=getIA(data1)
+      
+    }
+  }
+ 
+  console.log("recomendacionnnn",recomendacion)
   return recomendacion;
   }
 
