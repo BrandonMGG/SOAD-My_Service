@@ -44,12 +44,12 @@ router.post('/', async (req, res) => {
 
   const recomendaciones = [];
     const { tipo1, data1, endpoint, data2, tipo2 } = req.body;
+   
+    const recomendacion = getRecommendation(tipo1, data1, endpoint, tipo2, data2,res);
+    console.log(recomendacion)
+    //recomendaciones.push(recomendacion);
 
-    const recomendacion = getRecommendation(tipo1, data1, endpoint, tipo2, data2);
-
-    recomendaciones.push(recomendacion);
-
-  res.json({ recomendaciones });
+   res.json({ recomendacion });
 });
 
 export default router;
