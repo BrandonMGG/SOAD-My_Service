@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 // Definicion de apiKey 
-const openai = new OpenAI({ apiKey: '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' });
+const openai = new OpenAI({ apiKey: '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' });
 
 // funcion para realizar peticiones 
 export async function dataIA(prompt) {
@@ -12,7 +12,7 @@ export async function dataIA(prompt) {
   });
 
   // iumprimir el mensaje de openai en la consola
-  
+
   return completion.choices[0].message.content
 }
 
