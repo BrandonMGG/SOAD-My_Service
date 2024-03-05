@@ -73,6 +73,7 @@ Como mejoras a la arquitectura de este proyectoara este proyecto se tienen las s
 En este apartado se aportan las url de la solución, así como la de la documentación:
 - _URL API:_ https://soad-my-service.onrender.com/recommendation || Las peticiones de recomendaciones se deben enviar mediante un método POST a esta dirección.
 - _URL Documentación Swagger-OpenApi:_ https://soad-my-service.onrender.com/api-docs/swagger/ || La documentación del API realizado se encuentra en este link.
+- _URL Documentación GitHub Pages:_ https://brandonmgg.github.io/SOAD-My_Service/
 
 
 
