@@ -1,4 +1,4 @@
-# Bienvenidos a la documantación del servicio de recomendaciones de platillos!
+# Bienvenidos a la documentación del servicio de recomendaciones de platillos!
 
 Esta página alberga cada una de las decisiones de diseño/implementación que se tomaron durante la realización del proyecto.
 
