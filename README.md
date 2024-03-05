@@ -54,3 +54,30 @@ Los diagramas realizados para esta implementación fueron los de contexto, conte
 
 ### **Diagrama de componentes:**
 ![diagC4Components](https://github.com/BrandonMGG/SOAD-My_Service/blob/IA-Endpoint/Diagrams/Component%20Diagram.jpg?raw=true)
+
+## 6. Comentarios y mejoras a la arquitectura
+Como mejoras a la arquitectura de este proyectoara este proyecto se tienen las siguientes: 
+ 
+1. Para sacarle mejor provecho al API, una mejora significativa sería crear una aplicación web con interfaz gráfica, de forma que se utilice el API de manera más amigable con el usuario.
+
+2. Es posible considerar la posibilidad de utilizar otro lenguaje de programación para el desarrollo del proyecto. JavaScript con Node.js es una opción bastante buena, sin embargo, otros lenguajes como Python podría ofrecer ventajas adicionales, en el ámbito de la inteligencia artificial y el procesamiento de datos. Además, sería buena idea explorar otros Frameworks que ofrezcan diferentes características y enfoques que podrían ser beneficiosos para el proyecto.
+
+3. Explorar otras alternativas a endpoints de inteligencia artificial, ya que puede haber opciones que funcionen mejor con nuestra implementación.
+
+4. Mejorar el formato de las peticiones para poder ejecutar peticiones de recomendaciones de una manera más eficiente y completa.
+
+5. Es posible que ya estando en producción, sea necesario un sistema para obtener retroalimentación por parte de los usuarios del sistema para identificar áreas de mejora y nuevas características que puedan agregar valor.
+
+
+## 7. Anexos
+En este apartado se aportan las url de la solución, así como la de la documentación:
+- _URL API:_ https://soad-my-service.onrender.com/recommendation || Las peticiones de recomendaciones se deben enviar mediante un método POST a esta dirección.
+- _URL Documentación Swagger-OpenApi:_ https://soad-my-service.onrender.com/api-docs/swagger/ || La documentación del API realizado se encuentra en este link.
+
+
+
+
+
+
+
+
