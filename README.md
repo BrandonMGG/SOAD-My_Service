@@ -16,7 +16,7 @@ Se utiliza _Express.js_, el cual es un framework web minimalista y flexible para
 
 _npm (Node Package Manager)_: Es el administrador de paquetes para Node.js. Se utiliza para instalar, compartir y administrar dependencias de proyectos Node.js. Este fue determinante en la integración de bibliotecas como la de openai para poder implementar el endpoint de recomendaciones con inteligencia artificial.
 
-## 4. Estándares de porgramación.
+## 4. Estándares de programación.
 Los estándares de programación para el desarrollo del servicio web se definen como sigue:
 
 _Estructura del código:_
