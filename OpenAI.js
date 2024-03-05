@@ -1,10 +1,10 @@
 import OpenAI from "openai";
 
 // Definicion de apiKey 
-const openai = new OpenAI({ apiKey: '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' });
+const openai = new OpenAI({ apiKey: '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' });
 
 // funcion para realizar peticiones 
-export async function main(prompt) {
+export async function dataIA(prompt) {
   //hacer la peticion al API de openai
   const completion = await openai.chat.completions.create({
     messages: [{ role: "system", content: prompt }],
@@ -12,8 +12,11 @@ export async function main(prompt) {
   });
 
   // iumprimir el mensaje de openai en la consola
-  console.log(completion.choices[0].message.content);
+  
+  return completion.choices[0].message.content
 }
+
+export default dataIA
 
 // llamada a la funcion para hacer la peticion
 // main("hola, com estas?");
