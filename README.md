@@ -4,7 +4,7 @@ Esta página alberga cada una de las decisiones de diseño/implementación que s
 
 ## 1. Lenguaje de programación.
 
-En cuanto al lenguaje de programción utilizado para el desarrollo del servicio y la lectura de la base de datos fue JavaScript. Este es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es muy popular y ampliamente utilizados en el desarrollo web.
+En cuanto al lenguaje de programción utilizado para el desarrollo del servicio y la lectura de la base de datos fue JavaScript. Este es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es muy popular y ampliamente utilizados en el desarrollo web. Se usó para el desarrollo de este proyecto debido a que JavaScript facilita la creación de una API cohesiva y consistente. Además, la amplia disponibilidad de módulos y paquetes en el ecosistema de Node.js permite una rápida implementación de funcionalidades complejas, lo que acelera el desarrollo. Además, su sintaxis moderna y legible facilita el desarrollo y simplifica el mantenimiento a largo plazo de la API.
 
 ![javascript-logo](https://github.com/BrandonMGG/SOAD-My_Service/assets/48070830/258bd954-1354-4f80-a10f-ebde2fe0e063)
 
