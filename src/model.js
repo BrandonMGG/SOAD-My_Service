@@ -146,6 +146,26 @@ function obtenerData(type1, data1, type2, data2, res) {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export {
   obtenerPlatoPrincipal,
   obtenerPostre,
