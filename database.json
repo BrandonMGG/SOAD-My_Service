@@ -12,7 +12,7 @@
       },
       {
         "nombre": "Sushi",
-        "postreRecomendado": "Mochi",
+        "postreRecomendado": "Arroz Con Leche",
         "bebidaRecomendada": "Sake"
       }
     ],
@@ -24,7 +24,7 @@
         "nombre": "Pastel de chocolate"
       },
       {
-        "nombre": "Mochi"
+        "nombre": "Arroz con Leche"
       }
     ],
     "bebidas": [
