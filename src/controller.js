@@ -88,12 +88,14 @@ async function getRecommendation(tipo1, data1, endpoint, tipo2, data2, res) {
                 "bebida": Drink,
                 "postre": Dessert
               }
+              
               return data
 
 
             }
-            if (tipo1 === "Dressert") {
+            if (tipo1 === "Dessert") {
 
+             
               const CourseType = response.data.data.RecommendedMeals[0].Name
               const Drink = response.data.data.RecommendedMeals[1].Name
 
@@ -101,6 +103,7 @@ async function getRecommendation(tipo1, data1, endpoint, tipo2, data2, res) {
                 "bebida": Drink,
                 "plato": CourseType
               }
+              console.log("data",data)
               return data
 
             }
@@ -189,20 +192,20 @@ async function getRecommendation(tipo1, data1, endpoint, tipo2, data2, res) {
 
             if (tipo1 === "Drink" && tipo2 === "MainCourse") {
 
-              const Dressert = response.data.data.RecommendedMeals[0].Name
+              const Dessert = response.data.data.RecommendedMeals[0].Name
 
               const data = {
-                "Dressert": Dressert
+                "Dessert": Dessert
               }
               return data
 
             }
             if (tipo1 === "MainCourse" && tipo2 === "Drink") {
 
-              const Dressert = response.data.data.RecommendedMeals[0].Name
+              const Dessert = response.data.data.RecommendedMeals[0].Name
 
               const data = {
-                "Dressert": Dressert
+                "Dessert": Dessert
               }
               return data
 
